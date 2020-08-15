@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RepositoryDetailsViewController.swift
 //  Github search
 //
 //  Created by Niec, Mateusz on 15/08/2020.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RepositoryDetailsViewController: UIViewController {
 
+    var repo: Repository?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
 }
-
