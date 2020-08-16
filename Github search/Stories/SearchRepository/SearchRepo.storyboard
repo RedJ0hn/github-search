@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Repo View Controller-->
+        <!--Search Repository View Controller-->
         <scene sceneID="FBd-5A-LCm">
             <objects>
-                <viewController id="FSj-cc-dHW" customClass="SearchRepoViewController" customModule="Github_search" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FSj-cc-dHW" customClass="SearchRepositoryViewController" customModule="Github_search" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Pd-r6-lj2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

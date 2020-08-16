@@ -10,8 +10,8 @@ import UIKit
 
 class SearchResultViewControllerViewController: UIViewController {
 
-    var respos: [Repository] = []
-    var selectedRepo: Repository?
+    var viewModel: SearchResultViewModel?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class SearchResultViewControllerViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? RepositoryDetailsViewController {
-            destination.repo = selectedRepo
+            destination.viewModel = RepositoryDetailsViewModel(repo: viewModel?.getSelectedRepo())
         }
     }
 
@@ -31,12 +31,13 @@ class SearchResultViewControllerViewController: UIViewController {
 extension SearchResultViewControllerViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return respos.count
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.getReposCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell") as? SearchResultTableViewCell {
-            cell.configure(with: respos[indexPath.row])
+        if let viewModel = viewModel, let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell") as? SearchResultTableViewCell {
+            cell.configure(with: viewModel.getRepoAt(indexPath: indexPath))
             return cell
         }
         return UITableViewCell()
@@ -48,7 +49,7 @@ extension SearchResultViewControllerViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedRepo = respos[indexPath.row]
+        viewModel?.selectRepoAt(indexPath: indexPath)
         performSegue(withIdentifier: "ShowDetails", sender: nil)
     }
     

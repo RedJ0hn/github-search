@@ -14,7 +14,7 @@ class RepositoryOwner: Codable {
         case login
         case id
         case nodeId = "node_id"
-        case avatarUrl = "avarat_url"
+        case avatarUrl = "avatar_url"
         case url
         case type
     }

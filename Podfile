@@ -4,8 +4,9 @@
 use_frameworks!
 
 target 'Github search' do
-
-	pod 'Alamofire'
-	pod 'SVProgressHUD'
-
+  
+  pod 'Alamofire'
+  pod 'SVProgressHUD'
+  pod 'IQKeyboardManagerSwift'
+  
 end
