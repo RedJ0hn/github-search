@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FSj-cc-dHW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Repository View Controller-->
+        <scene sceneID="FBd-5A-LCm">
+            <objects>
+                <viewController id="FSj-cc-dHW" customClass="SearchRepositoryViewController" customModule="Github_search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Pd-r6-lj2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github repository search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf2-ND-n2o">
+                                <rect key="frame" x="20" y="77" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="iQk-vZ-9Ak">
+                                <rect key="frame" x="22" y="139" width="370" height="97"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repository name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPs-eB-ypz">
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCy-2n-CDL">
+                                        <rect key="frame" x="0.0" y="67" width="370" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="FSj-cc-dHW" eventType="touchUpInside" id="92U-iP-MZD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iQk-vZ-9Ak" firstAttribute="top" secondItem="kf2-ND-n2o" secondAttribute="bottom" constant="33" id="3jc-sq-6vz"/>
+                            <constraint firstItem="kf2-ND-n2o" firstAttribute="top" secondItem="yYc-UI-2fG" secondAttribute="top" constant="33" id="J5d-SY-B3t"/>
+                            <constraint firstItem="yYc-UI-2fG" firstAttribute="trailing" secondItem="iQk-vZ-9Ak" secondAttribute="trailing" constant="22" id="Ldw-Sk-Z4k"/>
+                            <constraint firstItem="yYc-UI-2fG" firstAttribute="trailing" secondItem="kf2-ND-n2o" secondAttribute="trailing" constant="20" id="fOw-vk-aIy"/>
+                            <constraint firstItem="iQk-vZ-9Ak" firstAttribute="leading" secondItem="yYc-UI-2fG" secondAttribute="leading" constant="22" id="haJ-zz-jDU"/>
+                            <constraint firstItem="kf2-ND-n2o" firstAttribute="leading" secondItem="yYc-UI-2fG" secondAttribute="leading" constant="20" id="ubj-W3-xFk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yYc-UI-2fG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9NC-oO-siZ"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="CPs-eB-ypz" id="mBW-dd-KvW"/>
+                        <segue destination="hgM-M5-Bxf" kind="show" identifier="ShowResults" id="mcV-cx-OBl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vdm-1q-afc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="119"/>
+        </scene>
+        <!--SearchResult-->
+        <scene sceneID="CQU-VV-6C2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchResult" id="hgM-M5-Bxf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eK1-2a-G5M"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQT-xZ-WMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2042" y="110"/>
+        </scene>
+    </scenes>
+</document>
