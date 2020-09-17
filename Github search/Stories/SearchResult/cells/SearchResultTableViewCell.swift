@@ -8,18 +8,59 @@
 
 import UIKit
 
-class SearchResultTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var repositoryNameLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var creationDateLabel: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
+class SearchResultCollectionViewCell: UICollectionViewCell {
+    
+    static var identifier: String = "SearchResultCell"
+    
+    lazy var repositoryNameLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var authorLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var creationDateLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var languageLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [repositoryNameLabel, authorLabel, creationDateLabel, languageLabel])
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 0
+        stackView.axis = .vertical
+        contentView.addSubview(stackView)
+        return stackView
+    }()
+    
+    func setConstraints() {
+        stackView.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalToSuperview().offset(11)
+            make.bottom.equalToSuperview().offset(-11)
+        }
+    }
     
     func configure(with repo: Repository) {
         repositoryNameLabel.text = "Name: " + (repo.name ?? "")
         authorLabel.text = "Author: " + (repo.owner?.login ?? "")
         creationDateLabel.text = "Creatio date: " + (repo.createdAt?.getString(format: "dd.MM.yyyy") ?? "")
         languageLabel.text = "Language: " + (repo.language ?? "")
+        setConstraints()
     }
-
+    
 }
