@@ -10,26 +10,18 @@ import Foundation
 
 class SearchResultViewModel {
     
-    var respos: [Repository] = []
-    var selectedRepo: Repository?
+    var repos: [Repository] = []
     
     init(repos: [Repository]) {
-        self.respos = repos
+        self.repos = repos
     }
     
     func getReposCount() -> Int {
-        return respos.count
-    }
-    
-    func selectRepoAt(indexPath: IndexPath) {
-        selectedRepo = respos[indexPath.row]
+        return repos.count
     }
     
     func getRepoAt(indexPath: IndexPath) -> Repository {
-        return respos[indexPath.row]
+        return repos[indexPath.row]
     }
-    
-    func getSelectedRepo() -> Repository? {
-        return selectedRepo
-    }
+
 }

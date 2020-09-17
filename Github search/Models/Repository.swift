@@ -61,3 +61,16 @@ class Repository: Codable {
     let score: Double?
 
 }
+
+extension Repository: Hashable {
+    
+    static func == (lhs: Repository, rhs: Repository) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+        hasher.combine(owner?.id)
+    }
+}

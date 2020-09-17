@@ -8,5 +8,6 @@ target 'Github search' do
   pod 'Alamofire'
   pod 'SVProgressHUD'
   pod 'IQKeyboardManagerSwift'
+  pod 'SnapKit'
   
 end

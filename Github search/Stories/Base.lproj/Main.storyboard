@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2u-DF-6W8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2u-DF-6W8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,22 +18,28 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="68S-10-bzC" kind="relationship" relationship="rootViewController" id="Hf7-GC-Bwi"/>
+                        <segue destination="Ijh-1d-xAQ" kind="relationship" relationship="rootViewController" id="8hw-IO-6K1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lk9-uu-M4R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-500" y="-11"/>
         </scene>
-        <!--SearchRepo-->
-        <scene sceneID="O6U-in-p0H">
+        <!--Search Repository View Controller-->
+        <scene sceneID="5nq-Kr-REb">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchRepo" id="68S-10-bzC" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="bcL-y3-HIN"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h5g-La-j4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Ijh-1d-xAQ" customClass="SearchRepositoryViewController" customModule="Github_search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GRG-cD-R4i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="DV6-SA-NRd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fXh-Mm-LJD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgt-zJ-aW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="-11"/>
+            <point key="canvasLocation" x="268" y="-11"/>
         </scene>
     </scenes>
 </document>
